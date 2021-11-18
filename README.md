@@ -5,4 +5,5 @@ Plan de proyecto para trabajos finales de posgrado en Sistemas Embebidos
 
 ### Correcciones de la planificación:
 - Corrección fecha de la primer entrega.
-- Corrección de la sección de Descripción técnica-conceptual del proyecto a realizar 
+- Corrección de la sección de Descripción técnica-conceptual del proyecto a realizar.
+ 

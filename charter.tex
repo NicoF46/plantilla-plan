@@ -70,7 +70,8 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                 & 4 de noviembre de 2021 \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
+2      & Se completa hasta el punto 9 inclusive y se realizan las correcciones de la entrega 1.
+& 11 de noviembre de 2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -116,16 +117,15 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 Hoy en día los seres humanos nos encontramos constantemente rodeados de información, la información paso de ser un recurso escaso a un recurso abundante disponible para su explotación a partir de la era digital.\\
-Debido a este gran volumen de información, se genera la necesidad de disponer algún medio de discriminación para la información útil, la discriminación requerirá técnicas de análisis y procesamiento de datos. 
+Debido a este gran volumen de información, se genera la necesidad de disponer algún medio de discriminación para la información útil. La información requiere técnicas de análisis y procesamiento de datos para ser discriminada. \\
 La información se encuentra disponible para capitalizar en distintos sectores y procesos. 
-A modo de ejemplo, se pueden mencionar procesos en distintos sectores con diversas complejidades, como pueden ser una industria química, una papelera o incluso un estacionamiento.
-En todos los casos mencionados, disponemos de elementos capaces de recolectar la información. En el caso de la industria química podemos considerar sensores de ph, temperatura, posición y energía. De forma similar al ejemplo de la industria química, se podrían mencionar sensores para los ejemplos de la papelera o el estacionamiento.\\
-Los sensores son transductores de una variable física de interés que devuelve en un orden de magnitud la medición realizada. \\ 
-Un sensor se puede definir como un dispositivo capaz de detectar y responder a algún tipo de entrada del entorno físico. Los tipos de entrada pueden ser luz, calor, movimiento, humedad, presión o cualquiera de un gran número de otros fenómenos ambientales. La salida es generalmente una señal que se convierte en una pantalla legible por humanos en la ubicación del sensor o se transmite electrónicamente a través de una red para su lectura o procesamiento adicional. 
-El avance de la tecnología permitió el surgimiento de una infinidad de sensores con distintas capacidades físicas, capacidades de almacenamiento y formas de comunicación. A partir de esta característica, se puede mencionar que existe una gran cantidad de información dispersa en distintos elementos independientes.\\
- Hoy en día existen distintas aplicaciones que integran la información recopilada por los distintos sensores en una única plataforma, no obstante los costos de licencia, compatibilidad, usos de aplicación y el soporte son fundamentales para su funcionamiento presentan un desafío.\\
+A modo de ejemplo, se pueden mencionar una industria química, una papelera o incluso un estacionamiento.
+En todos los casos mencionados, disponemos de elementos capaces de recolectar la información, en el caso de la industria química podemos considerar sensores de ph, temperatura, posición y energía. De forma similar al ejemplo de la industria química, se podrían mencionar sensores para los ejemplos de la papelera o el estacionamiento.\\
+Un sensor se puede definir como un dispositivo capaz de detectar y responder a algún tipo de entrada del entorno físico. Los tipos de entrada pueden ser luz, calor, movimiento, humedad, presión o cualquiera de un gran número de otros fenómenos ambientales. La salida es generalmente una señal que se convierte en una pantalla legible por humanos en la ubicación del sensor o se transmite electrónicamente a través de una red para su lectura o procesamiento adicional. \\
+El avance de la tecnología permitió el surgimiento de una infinidad de sensores con distintas capacidades físicas, almacenamiento y comunicación. A partir de esta característica, se puede mencionar que existe una gran cantidad de información dispersa en distintos elementos independientes.\\
+ Hoy en día existen distintas aplicaciones que integran la información recopilada por los distintos sensores en una única plataforma, no obstante los costos de licencia, compatibilidad, usos de aplicación y el soporte son fundamentales para su funcionamiento.\\
  Las grandes industrias no tienen problemas de recursos para afrontar dicho problema. Por el contrario pequeñas industrias, comercios, cooperativas entre otros, presentan recursos acotados y no disponen las capacidades para integrar dichos sistemas.\\
- El presente proyecto se destaca especialmente por la generalidad del mismo, en lugar de buscar diferentes soluciones para distintos problemas, se propone una solución que se pueda adaptar a los distintos problemas y ambientes. Se busca desarrollar una aplicación que pueda ser utilizada en la mayor cantidad de escenarios posibles realizando configuraciones mínimas.\\
+ El presente proyecto se destaca especialmente por la generalidad del mismo, en lugar de buscar diferentes soluciones para distintos problemas, se propone una solución que se pueda adaptar a los distintos problemas y ambientes. En este trabajo se busca desarrollar una aplicación, la aplicación podrá ser utilizada en la mayor cantidad de escenarios posibles realizando configuraciones mínimas.\\
  Con este enfoque se propone separar el desarrollo en dos capas, una capa funcional común para cualquier problema y una capa de desarrollo particular para el cliente en cuestión.\\   
 En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema, se puede observar por un lado los clientes mobile/web y por otro lado el backend. Dentro del bloque de backend se puede distinguir los bloques denominados core genérico y workers. El bloque core genérico corresponde a la capa funcional común para los problemas como se menciono previamente, mientras que el bloque workers por su lado se corresponde con la lógica particular de los distintos problemas.\\
 A su vez, en la figura \ref{fig:diagBloques} se puede observar la existencia de un backoffice para realizar las configuraciones correspondientes para un cliente determinado desde un navegador web.
@@ -182,6 +182,7 @@ El proyecto incluye el desarrollo de un sistema encargado de:
 \item Registrar las mediciones realizadas por sensores y actuadores.
 \item Desarrollo del firmware en nodos sensores/actuadores para banco de pruebas.
 \item Desarrollo del hardware en nodos sensores/actuadores para banco de pruebas.
+\item Pruebas sobre la plataforma utilizando sensores de temperatura/humedad DHT22 como variables de entrada y 2 leds cumpliendo el rol de variables de salida.
 \end{enumerate}
 
 El proyecto no incluye:
@@ -244,22 +245,13 @@ A menor valor numérico, la prioridad es mayor.
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
-
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
-
-
 En esta sección se incluyen las historias de usuarios y sus correspondientes ponderaciones.
 
 \subsection{Usuarios}
 Como usuario quiero registrarme en la plataforma e ingresar con mi correo electrónico para garantizar la seguridad de mi información.
 \begin{itemize}
 	\item Dificultad: 3 - El registro del usuario involucra muchas horas para asegurar la autenticación del mismo.
-	\item Complejidad: 8 - La integración con algún servicio externo volverse difícil y deben considerarse muchos casos borde o situaciones.
+	\item Complejidad: 8 - La integración con algún servicio externo puede volverse difícil y deben considerarse muchos casos borde.
 	\item Riesgo: 5 - Se debe asegurar el mecanismo para corroborar la identidad al momento del registro del correo electrónico, generalmente se usan sms o email.
 \end{itemize}
 Story Points: 16
@@ -267,8 +259,8 @@ Story Points: 16
 \subsection{Sensores disponibles}
 Como usuario quiero poder visualizar el listado completo de los sensores disponibles para poder seleccionar el sensor de interés.
 \begin{itemize}
-	\item Dificultad: 3 - Involucra el pedido de información al backend y requiere seleccionar la forma de mostrar la información.
-	\item Complejidad: 5 - Hacer un servicio que devuelva información debería ser algo trivial.
+	\item Dificultad: 3 - Involucra hacer el pedido de información al backend y seleccionar la forma de mostrar la información.
+	\item Complejidad: 5 - Hacer un servicio que devuelva información contemplando todos los casos posibles.
 	\item Riesgo: 2 - Se puede dar el caso de no obtener información con el servicio teniendo que manejar un caso excepcional.
 \end{itemize}
 
@@ -276,8 +268,8 @@ Story Points: 10
 \subsection{Mediciones de un sensor}
 Como usuario quiero poder visualizar las mediciones de un sensor seleccionado para observar el correcto funcionamiento del sistema.
 \begin{itemize}
-	\item Dificultad: 3 - Involucra el pedido de información al backend y requiere seleccionar la forma de mostrar la información.
-	\item Complejidad: 5 - Hacer un servicio que devuelva información debería ser algo trivial.
+	\item Dificultad: 3 - Involucra el pedido de información al backend y seleccionar la forma de mostrar la información.
+	\item Complejidad: 5 - Hacer un servicio que devuelva información contemplando todos los casos posibles.
 	\item Riesgo: 3 - Se puede dar el caso de no obtener información con el servicio teniendo que manejar un caso excepcional.
 \end{itemize}
 
@@ -285,7 +277,7 @@ Story Points: 11
 \subsection{Alarmas}
 Como usuario quiero recibir notificaciones por la aplicación o correo electrónico en el caso de una alarma para conocer el estado actual del sistema.
 \begin{itemize}
-	\item Dificultad: 5 - Se requiere correr un proceso de fondo revisando la situacion de cada sensor para disparar una alarma.
+	\item Dificultad: 5 - Se requiere correr un proceso de fondo revisando la situación particular de cada sensor para accionar una alarma.
 	\item Complejidad: 13 - Cada sensor es diferente por lo que cada alarma es diferente y requiere darle un comportamiento particular.
 	\item Riesgo: 5 - Puedo que no se dispare una alarma y ocurra un problema.
 \end{itemize}
@@ -321,16 +313,17 @@ Los principales entregables del proyecto son:
 
 En esta sección se muestra el listado de tareas que forman parte del proyecto.
 \begin{enumerate}
-\item Planificación del proyecto (60 hs)
+\item Planificación del proyecto (70 hs)
 	\begin{enumerate}
-	\item Realizar el plan del proyecto (30 hs)
+	\item Realizar el plan del proyecto (40 hs)
 	\item Realizar el estudio de viabilidad económica-financiera del proyecto (20 hs)
 	\item Aprobación de la planificación(10 hs)
 	\end{enumerate}
-\item Investigación y selección de tecnologías. (40 hs)
+\item Investigación y selección de tecnologías. (56 hs)
 	\begin{enumerate}
 	\item Investigación y selección de las tecnologías en el desarrollo del software (32 hs)
 	\item Investigación de protocolos http-mqtt (8 hs)
+	\item Investigacion sobre herramientas de deploy(16 hs)
 	\end{enumerate}
 \item Configuración de la infraestructura del proyecto. (58 hs)
 	\begin{enumerate}
@@ -340,43 +333,43 @@ En esta sección se muestra el listado de tareas que forman parte del proyecto.
 	\item Configuración de un servicio externo para las pruebas unitarias CircleCi o Travis (6 hs).
 	\item Configuración de herramientas para el deploy de la aplicación (16 hs).
 	\end{enumerate}
-\item Desarrollo del backend. (58 hs)
+\item Desarrollo del backend. (72 hs)
 	\begin{enumerate}
-	\item Desarrollo del endpoint del listado de sensores (4 hrs)
-	\item Desarrollo del endpoint de las mediciones de un sensor  (6 hs)
-	\item Desarrollo del endpoint para el registro de un usuario (8 hs)
-	\item Desarrollo del endpoint para el login de un usuario  (4 hs)
+	\item Desarrollo del endpoint del listado de sensores (8 hrs)
+	\item Desarrollo del endpoint de las mediciones de un sensor  (8 hs)
+	\item Desarrollo del endpoint para el registro de un usuario (12 hs)
+	\item Desarrollo del endpoint para el login de un usuario  (8 hs)
 	\item Desarrollo del backoffice (16 hs)
 	\item Desarrollo del software para comunicacion con los sensores (20 hs)
 	\end{enumerate}
-\item Desarrollo del frontend web. (56 hs)
+\item Desarrollo del frontend web. (70 hs)
 	\begin{enumerate}
 	\item Diseño de las vistas de la aplicación (32 hs)
-	\item Desarrollo de la vista del login de un usuario (6 hs)
+	\item Desarrollo de la vista del login de un usuario (12 hs)
 	\item Desarrollo de la vista de un menú principal con las funcionalidades (8 hs)
-	\item Desarrollo de la vista del listado de sensores (6 hs)
+	\item Desarrollo de la vista del listado de sensores (12 hs)
 	\item Desarrollo de la vista de las mediciones de un sensor (12 hs)
 	\end{enumerate}
-\item Desarrollo del frontend mobile. (56 hs)
+\item Desarrollo del frontend mobile. (70 hs)
 	\begin{enumerate}
 	\item Diseño de las vistas de la aplicación (32)
-	\item Desarrollo de la vista del login de un usuario (6 hs)
+	\item Desarrollo de la vista del login de un usuario (12 hs)
 	\item Desarrollo de la vista de un menú principal con las funcionalidades (8 hs)
-	\item Desarrollo de la vista del listado de sensores (4 hs)
+	\item Desarrollo de la vista del listado de sensores (12 hs)
 	\item Desarrollo de la vista de las mediciones de un sensor (12 hs)
 	\end{enumerate}
-\item Testing. (50 hs)
+\item Testing. (60 hs)
 	\begin{enumerate}
 	\item Diseño de casos de prueba (8 hs)
 	\item Generación de datos de prueba (4 hs)
 	\item Diseño del hardware de pruebas (8 hs)
-	\item Ejecución del esquema de pruebas (24 hs)
+	\item Ejecución del esquema de pruebas (34 hs)
 	\item Generar reporte de las pruebas (6 hs)
 	\end{enumerate}
-\item Validación. (30 hs)
+\item Validación. (40 hs)
 	\begin{enumerate}
-	\item Diseño de ensayos de validación (6 hrs)
-	\item Ensayos de validación (24 hs)
+	\item Diseño de ensayos de validación (12 hrs)
+	\item Ensayos de validación (28 hs)
 	\end{enumerate}
 \item Presentación del trabajo. (142 hs)
 	\begin{enumerate}
@@ -387,9 +380,8 @@ En esta sección se muestra el listado de tareas que forman parte del proyecto.
 	\end{enumerate}	
 \end{enumerate}
 
-El tiempo total estimado del proyecto es de 630 hs.
+El tiempo total estimado del proyecto es de 638 hs.
 
-\begin{comment}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -542,6 +534,7 @@ Descripción &
 \end{tabularx}%
 \end{table}
 
+\begin{comment}
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
