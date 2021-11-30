@@ -74,6 +74,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 11 de noviembre de 2021 \\ \hline
 3      & Se completa hasta el punto 12 inclusive y se realizan las correcciones de la entrega 2.
 & 18 de noviembre de 2021 \\ \hline
+4      & Se completa hasta el punto 15 inclusive y se realizan las correcciones de la entrega 3.
+& 25 de noviembre de 2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -95,7 +97,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de una plataforma genérica de adquisición y visualización}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{XXX} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de una plataforma genérica de adquisición y visualización, y tendrá un presupuesto preliminar estimado de 638 hs de trabajo y \$12.662, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -113,27 +115,35 @@ Se adjunta a esta acta la planificación inicial.
 \end{table}
 
 
-
-
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-Hoy en día los seres humanos nos encontramos constantemente rodeados de información, la información paso de ser un recurso escaso a un recurso abundante disponible para su explotación a partir de la era digital.\\
-Debido a este gran volumen de información, se genera la necesidad de disponer algún medio de discriminación para la información útil. La información requiere técnicas de análisis y procesamiento de datos para ser discriminada. \\
-La información se encuentra disponible para capitalizar en distintos sectores y procesos. 
-A modo de ejemplo, se pueden mencionar una industria química, una papelera o incluso un estacionamiento.
-En todos los casos mencionados, disponemos de elementos capaces de recolectar la información, en el caso de la industria química podemos considerar sensores de ph, temperatura, posición y energía. De forma similar al ejemplo de la industria química, se podrían mencionar sensores para los ejemplos de la papelera o el estacionamiento.\\
+Hoy en día los seres humanos nos encontramos constantemente rodeados de información, la gran mayoría de las personas disponen de smartphones, dispositivos electrónicos y redes sociales. La información que hace un par de décadas era difícil de obtener, hoy se puede obtener en pocos segundos y alcance de la mano.\\
+A modo de ejemplo, se pueden mencionar los smartwatch o relojes inteligentes como se muestra en la figura \ref{fig:pulsera_inteligente}. Los smartwatch se encuentran constantemente monitoreando al usuario y brindando información del usuario por medio de un display o una aplicación en el smartphone.\\
+La información se encuentra disponible en una infinidad de sectores y en grandes volúmenes, se puede encontrar en sectores como una industria química, una papelera o incluso un centro de entrenamiento deportivo.
+Los volúmenes de información requieren la necesidad de algún medio de discriminación para la información que nos resulta de interés. Para realizar la discriminación de la información se requieren técnicas de análisis y procesamiento de datos.\\
+En todos los casos, disponemos de elementos capaces de recolectar la información, en el caso de la industria química podemos considerar sensores de ph, temperatura, posición y energía. De forma similar al ejemplo de la industria química, se podrían mencionar sensores para los ejemplos de la papelera o el centro de entrenamiento.\\
 Un sensor se puede definir como un dispositivo capaz de detectar y responder a algún tipo de entrada del entorno físico. Los tipos de entrada pueden ser luz, calor, movimiento, humedad, presión o cualquiera de un gran número de otros fenómenos ambientales. La salida es generalmente una señal que se convierte en una pantalla legible por humanos en la ubicación del sensor o se transmite electrónicamente a través de una red para su lectura o procesamiento adicional. \\
 El avance de la tecnología permitió el surgimiento de una infinidad de sensores con distintas capacidades físicas, almacenamiento y comunicación. A partir de esta característica, se puede mencionar que existe una gran cantidad de información dispersa en distintos elementos independientes.\\
- Hoy en día existen distintas aplicaciones que integran la información recopilada por los distintos sensores en una única plataforma, no obstante los costos de licencia, compatibilidad, usos de aplicación y el soporte son fundamentales para su funcionamiento.\\
- Las grandes industrias no tienen problemas de recursos para afrontar dicho problema. Por el contrario pequeñas industrias, comercios, cooperativas entre otros, presentan recursos acotados y no disponen las capacidades para integrar dichos sistemas.\\
- El presente proyecto se destaca especialmente por la generalidad del mismo, en lugar de buscar diferentes soluciones para distintos problemas, se propone una solución que se pueda adaptar a los distintos problemas y ambientes. En este trabajo se busca desarrollar una aplicación, la aplicación podrá ser utilizada en la mayor cantidad de escenarios posibles realizando configuraciones mínimas.\\
- Con este enfoque se propone separar el desarrollo en dos capas, una capa funcional común para cualquier problema y una capa de desarrollo particular para el cliente en cuestión.\\   
+ Hoy en día existen distintas aplicaciones que integran la información recopilada por los distintos sensores en una única plataforma, no obstante los costos de licencia, compatibilidad, usos de aplicación y el soporte son fundamentales para su funcionamiento.
+ Las grandes industrias no tienen problemas de recursos al momento de realizar una transformación digital. Por el contrario pequeñas industrias, comercios, cooperativas entre otros, presentan recursos acotados y no disponen las capacidades para integrar dichos sistemas o no existen sistemas para el rubro en cuestión.\\
+ El presente proyecto propone generar una plataforma para realizar una transformación digital o incluirse dentro de sectores que ya dispongan una integración digital.
+La plataforma podrá ser utilizada en la mayor cantidad de escenarios posibles realizando configuraciones mínimas. Las configuraciones mínimas serán las imágenes de la aplicación, los servicios que recolectan la información de los sensores y las funcionalidades habilitadas para la aplicación.\\
+El desarrollo de la plataforma se basa en separar el desarrollo en dos capas, una capa funcional común para cualquier problema y una capa de desarrollo particular para el cliente en cuestión.\\   
 En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema, se puede observar por un lado los clientes mobile/web y por otro lado el backend. Dentro del bloque de backend se puede distinguir los bloques denominados core genérico y workers. El bloque core genérico corresponde a la capa funcional común para los problemas como se menciono previamente, mientras que el bloque workers por su lado se corresponde con la lógica particular de los distintos problemas.\\
-A su vez, en la figura \ref{fig:diagBloques} se puede observar la existencia de un backoffice para realizar las configuraciones correspondientes para un cliente determinado desde un navegador web.
+A su vez, en la figura \ref{fig:diagBloques}, se puede observar la existencia de un backoffice para realizar las configuraciones correspondientes para un cliente determinado desde un navegador web.\\
+Para finalizar se propone un caso de aplicación, considerando un cliente hipotético que podría interesarle el proyecto.
+En un centro de entrenamiento con un equipo profesional de futbol, se propone integrar la información  de los atletas utilizando un smartwatch en cada atleta. La información sera visualizada en una tablet por el entrenador o preparador físico. Por otro lado desde la propia aplicación, el encargado de las instalaciones podrá realizar acciones como configurar la iluminación y el riego.
+A partir de esta situación, se realizaran las configuraciones sobre la plataforma para adaptarla a la necesidad del centro de entrenamiento.
 
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.55\textwidth]{./Figuras/pulsera2.jpg}
+\caption{Smartwatch o reloj inteligente}
+\label{fig:pulsera_inteligente}
+\end{figure}
 
- \begin{figure}[htpb]
+\begin{figure}[htpb]
 \centering 
 \includegraphics[width=.8\textwidth]{./Figuras/iot_nico.png}
 \caption{Diagrama en bloques del sistema}
@@ -392,7 +402,15 @@ En esta sección se muestra el diagrama de Activity On Node del proyecto.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=1.0\textwidth]{./Figuras/aon_iot.pdf}
+\includegraphics[width=1\textwidth]{./Figuras/referencias_aon.png}
+\caption{Referencias del diagrama \textit{Activity on Node}.}
+\label{fig:AoN_referencias}
+\end{figure}
+
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[angle=270,width=0.9\textwidth]{./Figuras/aon.png}
 \caption{Diagrama \textit{Activity on Node} expresado en horas.}
 \label{fig:AoN}
 \end{figure}
@@ -403,10 +421,17 @@ En esta sección se muestra el diagrama de Activity On Node del proyecto.
 
 En esta sección se muestra el diagrama de Gantt del proyecto.
 
+\begin{figure}[htpb]
+\centering 
+\includegraphics[angle=0,height=0.7\textheight]{./Figuras/planner_tareas.png}
+\caption{Listado de tareas del diagrama de Gantt }
+\label{fig:diagGantt_tareas}
+\end{figure}
+
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[angle=0,height=0.9\textheight]{./Figuras/gantt.png}
+\includegraphics[angle=0,height=0.86\textheight]{./Figuras/gantt.png}
 \caption{Diagrama de Gantt}
 \label{fig:diagGantt}
 \end{figure}
@@ -421,35 +446,47 @@ En esta sección se muestra el presupuesto del proyecto.
 \centering 
 \includegraphics[width=1.0\textwidth]{./Figuras/presupuesto.png}
 \caption{Presupuesto del proyecto en dólares.}
-\label{fig:AoN}
+\label{fig:presupuesto}
 \end{figure}
-
-\begin{comment}
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
+En esta sección se describen los riesgos asociados al proyecto, considerando las medidas necesarias para reducir la probabilidad de ocurrencia y el impacto del riesgo.
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: Imposibilidad de adquirir los componentes del proyecto.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
-
-Riesgo 2:
-\begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (9): Considero que sin los componentes no se puede realizar la mayor parte del proyecto.
+	\item Probabilidad de ocurrencia (3): Considero que los componentes seleccionados se pueden adquirir sin problema por la generalidad de los mismos.
 \end{itemize}
 
-Riesgo 3:
+
+Riesgo 2: Imposibilidad de cumplir con los plazos de entrega.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (6):
+	Considero que la planificación temporal realizada proporciona un margen de tiempo en caso de retrasos.
+	\item Probabilidad de ocurrencia (5): 
+	Considero que mi disponibilidad para trabajar en el proyecto puede variar debido a situaciones como: cambio de trabajo, enfermedades y la pandemia. 
+\end{itemize}
+
+
+Riesgo 3: Acceso a la información de la plataforma por personal no autorizado.
+\begin{itemize}
+	\item Severidad (7): Considero que el acceso a la información en ciertos rubros puede generar perdidas de gran relevancia.
+	\item Probabilidad de ocurrencia (6): Considero que en la actualidad existen técnicas para extraer información de las plataformas digitales. Las técnicas evolucionan continuamente.\\
+\end{itemize}
+
+
+Riesgo 4: Fallas en los sensores.
+\begin{itemize}
+	\item Severidad (8): Considerando el monitoreo de un proceso critico, la visibilidad de información incorrecta o ausencia de información puede provocar la toma de decisiones erróneas con consecuencias. 
+	\item Probabilidad de ocurrencia (5): Considero por experiencia que siempre pueden ocurrir fallas con los sensores por hardware o comunicación. 
+\end{itemize}
+
+
+Riesgo 5: Solución no escalable en el tiempo.
+\begin{itemize}
+	\item Severidad (8): Considero que al tratarse de un desarrollo genérico debe poder ser escalable en el tiempo.
+	\item Probabilidad de ocurrencia (6): Considero que la elección de tecnologías y el modelo del sistema pueden posibilitar este riesgo.
 \end{itemize}
 
 
@@ -461,71 +498,176 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Imposibilidad de adquirir los componentes del proyecto       &9   &3   &27     &*    &*    &*      \\ \hline
+Imposibilidad de cumplir con los plazos de entrega       &6   &5   &30     &*    &*    &*      \\ \hline
+Acceso a la información de la plataforma por personal no autorizado       &7   &6   &42     &6    &4    &24      \\ \hline
+Fallas en los sensores       &8   &5   &40     &4    &5    &20      \\ \hline
+Solución no escalable en el tiempo       &8  &6   &48     &8    &4    &32      \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 36
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 3: Acceso a la información de la plataforma por personal no autorizado.\\
+Medidas de mitigación: Realizar una investigación sobre identificación de usuarios y realizar una implementación acorde. Realizar una investigación sobre que información podría ser accedida sin consentimiento.\\
+  - Severidad (6): La severidad disminuye por acción de verificar el tipo de información que podría ser accedida.\\
+  - Probabilidad de ocurrencia (4): La probabilidad de ocurrencia disminuye por la implementación de algún método de identificación de un usuario.
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 4: Fallas en los sensores.\\
+Medidas de mitigación: Notificar por medio de la interfaz grafica el problema con el sensor.\\
+  - Severidad (4): La severidad disminuye por el uso de notificaciones .\\
+  - Probabilidad de ocurrencia (5): La probabilidad de ocurrencia se mantiene, los sensores en principio estarían fuera de alcance.
+  
+Riesgo 5: Solución no escalable en el tiempo.\\
+Medidas de mitigación: Realizar un buen modelado de las entidades, selección de patrones de diseño y tecnologías.\\
+  - Severidad (8): La severidad se mantiene.\\
+  - Probabilidad de ocurrencia (4): La probabilidad de ocurrencia disminuye por la investigación sobre tecnologías y el diseño de una buena arquitectura.
 
-\end{consigna}
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
 Para cada uno de los requerimientos del proyecto indique:
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
-
+\item Req \#1.1: El sistema debe funcionar en los clientes web chrome y mozilla.
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item Verificación del desarrollo de frontend con los clientes web chrome y mozilla en la computadora de desarrollo. 
+	\item Validación con el cliente con los dos clientes web utilizando la computadora del cliente o la del desarrollador.
+\end{itemize}
+
+\item Req \#1.2: El sistema debe funcionar en ios/android.
+\begin{itemize}
+	\item Verificación de las versiones mobile en los simuladores correspondientes y en los dispositivos móviles para el desarrollo. 
+	\item Validación con el cliente utilizando el teléfono del cliente o el del desarrollador.
+\end{itemize}
+
+\item Req \#1.3: El usuario debe poder listar todos los sensores disponibles.
+\begin{itemize}
+	\item Verificación de la funcionalidad con pruebas unitarias e integración. 
+	\item Validación con el hardware diseñado para testing.
+\end{itemize}
+
+\item Req \#1.4: El usuario debe poder visualizar las mediciones de los sensores disponibles.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación con el hardware diseñado para testing.
+\end{itemize}
+
+\item Req \#1.5: El usuario debe poder accionar un actuador en caso de contar con los permisos.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación con el hardware diseñado para testing.
+\end{itemize}
+
+\item Req \#2.1: El usuario debe poder ingresar mediante un login.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación utilizando los clientes web y mobile con el cliente.
+\end{itemize}
+
+\item Req \#2.2: El sistema debe permitir la configuración de las funcionalidades disponibles.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación utilizando los clientes web y mobile con una prueba diseñada puntualmente para este escenario particular.
+\end{itemize}
+
+\item Req \#2.3: El sistema debe permitir la actualización de los parámetros de un usuario.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación utilizando los clientes web y mobile con el cliente.
+\end{itemize}
+
+\item Req \#2.4: El sistema debe permitir la actualización de los parámetros de un sensor.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación utilizando los clientes web y mobile.
+\end{itemize}
+
+\item Req \#2.5: El sistema debe permitir la configuración de una alerta a partir de los parámetros de un sensor.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias e integración.
+	\item Validación utilizando las notificaciones de los clientes web y mobile.
+\end{itemize}
+
+\item Req \#3.1: El sistema debe persistir la información de los usuarios.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias.
+	\item Validación utilizando Postman, repitiendo la prueba en diferentes momentos.
+\end{itemize}
+
+\item Req \#3.2: El sistema debe persistir la información de los sensores.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias.
+	\item  Validación utilizando Postman, repitiendo la prueba en diferentes momentos.
+\end{itemize}
+
+\item Req \#3.3: El sistema debe poder informar con una alerta si es necesario.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias.
+	\item Validación utilizando Postman, repitiendo la prueba en diferentes momentos.
+\end{itemize}
+
+\item Req \#3.4: El sistema debe poder comunicarse con los protocolos http-mqtt.
+\begin{itemize}
+	\item  Verificación de la funcionalidad con pruebas unitarias.
+	\item Validación utilizando Postman utilizando el hardware de testing.
+\end{itemize}
+
+\item Req \#4.1: El sistema debe disponer una suite de pruebas unitarias para asegurar el funcionamiento.
+\begin{itemize}
+	\item  Verificación por parte del desarrollador en el uso de TDD.
+	\item Validación utilizando una métrica de testing coverage.
+\end{itemize}
+
+\item Req \#4.2: El sistema debe disponer un banco de pruebas con sensores y actuadores.
+\begin{itemize}
+	\item  Verificación sobre el hardware de testing seleccionado.
+	\item Validación sobre el hardware de testing.
+\end{itemize}
+
+\item Req \#4.3: El sistema debe disponer una serie de pruebas de integración utilizando el banco de pruebas.
+\begin{itemize}
+	\item  Verificación de la existencia del plan de pruebas.
+	\item Validación sobre los alcances y objetivos de las pruebas del plan.
 \end{itemize}
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
 
-\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+La ultima etapa del proyecto consiste en una presentación con la presencia de los jurados y el director del proyecto donde se hará énfasis en las siguientes actividades:
 
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
+	Encargado: Funes Pablo Nicolás\\
+	\begin{itemize}
+	 \item Se realizara una evaluación de los requerimientos y objetivos alcanzados considerando el plan de trabajo original.
+	 \item Se realizara un análisis de causas sobre las diferencias mencionadas en el punto previo.
+	 \end{itemize}
 	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+\\
+	Encargado: Funes Pablo Nicolás\\
+		\begin{itemize}
+	\item Se realizara una evaluación sobre las distintas herramientas empleadas en el proyecto, haciendo énfasis en la utilidad de las mismas.
+		\end{itemize}
+
 	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	\\
+	Encargado: Funes Pablo Nicolás\\
+		\begin{itemize}
+	\item Al finalizar la defensa del proyecto, se procederá a agradecer a todos los involucrados en el proyecto.
+	  	\end{itemize}
 \end{itemize}
 
-\end{consigna}
-\end{comment}
 
 
 \end{document}
